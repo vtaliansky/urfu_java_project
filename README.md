@@ -1,40 +1,50 @@
-Проект «Schools» (Java 21 + SQLite)
+# Проект *Schools* (Java + SQLite)
+
 Демонстрационная консольная программа:
 
-- читает файл CSV schools.csv;
-- строит локальную базу SQLite «schools.db» по 3-й нормальной форме;
-- выполняет 3 SQL-запроса из задания;
-- сохраняет диаграмму «Average Students per County (Top 10)» в avg_students_county.png.
+* читает файл CSV `schools.csv`;
+* строит локальную базу SQLite `schools.db` по 3-й нормальной форме;
+* выполняет 3 SQL-запроса из задания;
+* сохраняет диаграмму **Average Students per County (Top 10)** в `avg_students_county.png`.
 
-В каталоге lib лежат все необходимые JAR-файлы:
+---
 
-sqlite-jdbc-3.46.0.0.jar
-commons-csv-1.10.0.jar
-jfreechart-1.5.4.jar
-jcommon-1.0.24.jar
-slf4j-api-2.0.9.jar
-slf4j-simple-2.0.9.jar
+## Требуемые JAR-файлы
 
-Структура каталога
+* `sqlite-jdbc-3.46.0.0.jar`  
+* `commons-csv-1.10.0.jar`  
+* `jfreechart-1.5.4.jar`   `jcommon-1.0.24.jar`  
+* `slf4j-api-2.0.9.jar`    `slf4j-simple-2.0.9.jar`
+
+---
+
+## Структура каталога
+
 java_project
-├─ lib / внешние библиотеки
-├─ src файлы *.java Main, CsvLoader, DbUtil, DbPopulator, Queries, PlotUtil, …
-├─ schools.csv входные данные (UTF-8)
-└─ out / компилированные .class (создаётся автоматически)
+  -  lib/ внешние библиотеки
+  -  src *.java Main, CsvLoader, …
+  -  schools.csv входные данные (UTF-8)
+  - out/ скомпилированные .class (создаётся автоматически)
+
 
 После первого запуска появятся ещё два файла:
 
-schools.db
-avg_students_county.png
+* `schools.db`  
+* `avg_students_county.png`
 
-Сборка и запуск
-открыть терминал в папке java_project;
+---
 
-javac -d out -cp "lib/*" *.java
-java  -cp "out;lib/*" Main
+## Сборка и запуск
+
+Откройте терминал в папке **`java_project`** и выполните:
+
+-  javac -d out -cp "lib/*" *.java
+-  java  -cp "out;lib/*" Main
 
 
 Пример вывода:
+
+```
 
 --- Average students by county ---
 Orange         8223.9
@@ -48,13 +58,20 @@ Sacramento     3511.4
 San Mateo      3289.2
 Kern           3108.3
 ---
---- Average expenditure (Fresno, Contra Costa, El Dorado, Glenn) ---
-Fresno         5396.98
+---Avg expenditure (4 counties)---
 Contra Costa   5269.45
 El Dorado      5309.97
-Glenn          4363.35
+Fresno         5396.98
+Glenn          4363.35        
 ---
---- Best math score (5 000–7 500 и 10 000–11 000 students) ---
-Encinitas Union Elementary  5259  678.60
+---Best math (ranges)---
+Encinitas Union Elementary5259           678.599975585938
 ---
-**Chart saved to avg_students_county.png**
+Chart saved`: avg_students_county.png
+```
+
+
+Привер графика:
+![avg_students_county](https://github.com/user-attachments/assets/e7e7813c-7c8b-45c4-8239-2384dc777ae3)
+
+
