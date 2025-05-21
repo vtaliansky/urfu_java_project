@@ -71,7 +71,7 @@ Chart saved`: avg_students_county.png
 ```
 
 
-Привер графика:
+Пример графика:
 ![avg_students_county](https://github.com/user-attachments/assets/e7e7813c-7c8b-45c4-8239-2384dc777ae3)
 
 
